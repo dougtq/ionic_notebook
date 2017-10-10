@@ -1,14 +1,31 @@
 <ion-header>
-  <ion-navbar>
+  <ion-navbar color="primary">
     <ion-title>
-      Ionic Blank
+      <ion-icon name="paper" icon-left></ion-icon>
+      NoteBook
     </ion-title>
+
+    <ion-buttons end>
+      <button ion-button icon-only (click)="orderBy()">
+        <ion-icon name="list"></ion-icon>
+      </button>
+      <button ion-button icon-only (click)="viewAnotation()">
+        <ion-icon name="add"></ion-icon>
+      </button>
+    </ion-buttons>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+  <div text-center>
+    <p *ngIf="annotations && annotations.length === 0; else annotationsList">Nenhuma anotação ainda.</p>
+  </div>
+
+  <ng-template #annotationsList>
+    <ion-list>
+      <ion-item *ngFor="let annotation of annotations" (click)="viewAnnotation(annotation)">
+        {{ annotation.title }}
+      </ion-item>
+    </ion-list>
+  </ng-template>
 </ion-content>
