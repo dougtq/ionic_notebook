@@ -1,0 +1,37 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>
+      Anotação
+    </ion-title>
+
+    <ion-buttons end>
+      <button ion-button icon-only>
+        <ion-icon name="color-palette"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <form (ngSubmit)="salvarNota()" [formGroup]="form">
+    <ion-list>
+
+      <ion-item>
+        <ion-label floating>Título</ion-label>
+        <ion-input type="text" formControlName="title"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>Conteúdo</ion-label>
+        <ion-textarea type="text" rows="15" formControlName="content"></ion-textarea>
+      </ion-item>
+
+    </ion-list>
+
+    <button type="submit" ion-button block icon-only>
+      <ion-icon name="checkmark"></ion-icon>
+    </button>
+  </form>
+
+</ion-content>
