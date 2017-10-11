@@ -6,8 +6,8 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SQLite } from '@ionic-native/sqlite';
 
 import { MyApp } from './app.component';
-import { AnnotationProvider } from '../providers/annotation/annotation';
-import { SqliteConnectionProvider } from '../providers/sqlite-connection/sqlite-connection';
+import { AnnotationProvider } from '../providers/annotation/annotation.service';
+import { SqliteConnectionProvider } from '../providers/sqlite-connection/sqlite-connection.service';
 
 @NgModule({
   declarations: [
