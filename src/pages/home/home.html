@@ -8,8 +8,8 @@
     <ion-buttons end>
       <button ion-button icon-only (click)="orderBy()">
         <ion-icon name="list"></ion-icon>
-      </button>
-      <button ion-button icon-only (click)="viewAnotation()">
+      </button>&emsp;
+      <button ion-button icon-only (click)="viewAnnotation()">
         <ion-icon name="add"></ion-icon>
       </button>
     </ion-buttons>
@@ -18,14 +18,16 @@
 
 <ion-content padding>
   <div text-center>
-    <p *ngIf="annotations && annotations.length === 0; else annotationsList">Nenhuma anotação ainda.</p>
+    <p *ngIf="annotations && annotations.length === 0; else annotationsList">Nenhuma anotação inserida.</p>
   </div>
 
   <ng-template #annotationsList>
     <ion-list>
-      <ion-item *ngFor="let annotation of annotations" (click)="viewAnnotation(annotation)">
-        {{ annotation.title }}
-      </ion-item>
+      <div *ngFor="let annotation of annotations">
+        <ion-item (click)="viewAnnotation(annotation)">
+          {{ annotation.title }}
+        </ion-item>
+      </div>
     </ion-list>
   </ng-template>
 </ion-content>
