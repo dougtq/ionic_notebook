@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { IonicPageModule } from 'ionic-angular';
-import { AnnotationPage } from './anotation';
+import { AnnotationPage } from './annotation';
 
 @NgModule({
   declarations: [

@@ -4,7 +4,11 @@
     <ion-title>
       Anotação
     </ion-title>
-
+    <ion-buttons start>
+      <button ion-button icon-only (click)="voltarInicio()">
+        <ion-icon name="arrow-back"></ion-icon>
+      </button>
+    </ion-buttons>
     <ion-buttons end>
       <button ion-button icon-only>
         <ion-icon name="color-palette"></ion-icon>
@@ -29,7 +33,12 @@
 
     </ion-list>
 
-    <button type="submit" ion-button block icon-only>
+    <button type="submit" ion-button icon-only style="
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100vw">
       <ion-icon name="checkmark"></ion-icon>
     </button>
   </form>
